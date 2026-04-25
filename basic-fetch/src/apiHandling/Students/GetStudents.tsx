@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
-
-interface Student {
-  id: string;
-  studentName: string;
-  age: number;
-  Major: string;
-}
-
+import type { Student } from "../type";
 function GetStudents() {
   const [students, setStudents] = useState<Student[]>([]);
 
@@ -17,9 +10,6 @@ function GetStudents() {
       .catch((error) => console.error(error));
   }, []);
 
-
-
-  
   return (
     <div className="container">
       <h2 style={{ textAlign: "center", margin: "20px 0" }}>
@@ -35,6 +25,25 @@ function GetStudents() {
             <p>
               <strong>Major:</strong> {s.Major}
             </p>
+
+            {/* New Nested Courses Section */}
+            <div className="course-list">
+              <strong>Enrolled Courses:</strong>
+              {s.EnrolledCourses && s.EnrolledCourses.length > 0 ? (
+                <ul>
+                  {s.EnrolledCourses.map((course) => (
+                    <li key={course.id}>
+                      {course.courseName} <small>({course.instructor})</small>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
+                  No courses enrolled yet.
+                </p>
+              )}
+            </div>
+
             <div className="card-id">ID: {s.id}</div>
           </div>
         ))}

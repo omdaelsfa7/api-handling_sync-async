@@ -1,19 +1,18 @@
 import { useState } from "react";
-import type { Student } from "./type";
+import type { Student } from "../type";
 
 function AddStudents() {
   const [student, setStudent] = useState<Omit<Student, "id">>({
     studentName: "",
     age: 0,
     Major: "",
+    EnrolledCourses: [],
   });
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-
-    
     fetch("https://69ec549397482ad5c528479d.mockapi.io/uni/Students", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -25,14 +24,10 @@ function AddStudents() {
       })
       .then(() => {
         setMessage("Student created successfully!");
-        setStudent({ studentName: "", age: 0, Major: "" });
+        setStudent({ studentName: "", age: 0, Major: "", EnrolledCourses: [] });
       })
       .catch(() => setMessage("Failed to create student."));
   };
-
-
-
-
 
   return (
     <div className="container">

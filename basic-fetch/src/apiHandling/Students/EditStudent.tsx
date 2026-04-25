@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Student } from "./type";
+import type { Student } from "../type";
 
 function EditStudent() {
   const [id, setId] = useState("");
@@ -39,8 +39,6 @@ function EditStudent() {
       .catch(() => setMessage("Update failed."));
   };
 
-
-  
   return (
     <div className="container">
       <h2 style={{ textAlign: "center" }}>Edit Student</h2>

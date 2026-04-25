@@ -182,3 +182,24 @@
     border-right-color: var(--border);
   }
 }
+.course-list {
+  margin-top: 12px;
+  padding: 8px;
+  background: var(--bg);
+  border-radius: 6px;
+}
+
+.course-list ul {
+  margin: 5px 0 0 0;
+  padding-left: 20px;
+  list-style: square;
+}
+
+.course-list li {
+  font-size: 0.85rem;
+  color: var(--primary);
+}
+
+.course-list small {
+  color: var(--text-muted);
+}

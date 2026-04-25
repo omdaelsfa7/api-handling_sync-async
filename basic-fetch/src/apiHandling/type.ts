@@ -3,6 +3,7 @@ export interface Student {
   studentName: string;
   age: number;
   Major: string;
+  EnrolledCourses : Course[]
 }
 
 export interface Course {
