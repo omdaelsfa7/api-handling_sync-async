@@ -7,7 +7,7 @@ export interface Student {
 }
 
 export interface Course {
-  id: string;
+  id: number;
   courseName: string;
   instructor: string;
   maxStudents: number;
