@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff7ed;
+  color: #2f1b0c;
+}
+
+button {
+  cursor: pointer;
+}
